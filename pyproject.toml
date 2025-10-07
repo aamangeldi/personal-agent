@@ -1,0 +1,15 @@
+[project]
+name = "personal-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic",
+    "crewai",
+    "ffmpeg-python",
+    "openai-whisper",
+    "openai>=1.0.0",
+    "pydub",
+    "soundfile",
+]

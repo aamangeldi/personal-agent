@@ -20,13 +20,12 @@ class TextToSpeech:
         Initialize the Text-to-Speech module.
 
         Args:
-            api_key: OpenAI API key. If None, reads from ANTHROPIC_API_KEY env var
-                    (reusing the same key that works for Claude)
+            api_key: OpenAI API key. If None, reads from OPENAI_API_KEY env var
         """
-        # Use the same API key as the agent
-        self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
+        # Use OpenAI API key
+        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
         if not self.api_key:
-            raise ValueError("API key not provided. Set ANTHROPIC_API_KEY environment variable.")
+            raise ValueError("API key not provided. Set OPENAI_API_KEY environment variable.")
 
         self.client = OpenAI(api_key=self.api_key)
 

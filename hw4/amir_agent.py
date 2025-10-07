@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import os
-from nanda_adapter import NANDA
 from crewai import Agent, Task, Crew, LLM, Process
 
 def create_amir_assistant():
@@ -109,23 +108,7 @@ def main():
         return
 
     # Create Amir assistant function
-    amir_logic = create_amir_assistant()
-
-    # Initialize NANDA with Amir's assistant logic
-    nanda = NANDA(amir_logic)
-
-    # Start the server
-    print("Starting Amir's Personal Assistant with CrewAI...")
-    print("Ready to represent Amir in conversations!")
-
-    domain = os.getenv("DOMAIN_NAME", "localhost")
-
-    if domain != "localhost":
-        # Production with SSL
-        nanda.start_server_api(os.getenv("ANTHROPIC_API_KEY"), domain)
-    else:
-        # Development server
-        nanda.start_server()
+    return create_amir_assistant()
 
 if __name__ == "__main__":
     main()

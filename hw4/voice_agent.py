@@ -3,7 +3,6 @@
 Voice-enabled version of Amir's agent.
 Extends the text-based agent with speech input/output capabilities.
 """
-import os
 import re
 from pathlib import Path
 from speech_to_text import SpeechToText
