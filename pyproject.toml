@@ -11,5 +11,6 @@ dependencies = [
     "openai-whisper",
     "openai>=1.0.0",
     "pydub",
+    "sounddevice",
     "soundfile",
 ]
