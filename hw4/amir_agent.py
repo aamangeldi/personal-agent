@@ -64,21 +64,23 @@ def create_amir_assistant():
                 request, a question about his background, or any conversational interaction.
                 Be authentic, personal, and represent his voice and personality accurately.
 
+                IMPORTANT: Keep your response concise - maximum 50 words.
+
                 User input: {message_text}""",
-                expected_output="A natural, conversational response that authentically represents Amir's voice and perspective",
+                expected_output="A natural, conversational response that authentically represents Amir's voice and perspective (maximum 50 words)",
                 agent=personal_assistant
             )
 
             translator_task = Task(
-                description="Translate the response from the personal interaction task into Russian. Make sure the translation is accurate and natural.",
-                expected_output="A translated text in Russian",
+                description="Translate the response from the personal interaction task into Russian. Make sure the translation is accurate and natural. Keep it concise - maximum 50 words.",
+                expected_output="A translated text in Russian (maximum 50 words)",
                 agent=translator
             )
 
             format_response_task = Task(
                 description="""Take the English response from the personal interaction task and the Russian translation from the translator task,
-                and format them together in a clear, organized way showing both languages.""",
-                expected_output="A well-formatted response showing both English and Russian versions clearly labeled",
+                and format them together in a clear, organized way showing both languages. Keep it concise and well-structured.""",
+                expected_output="A well-formatted response showing both English and Russian versions clearly labeled (each ~50 words)",
                 agent=formatter
             )
 

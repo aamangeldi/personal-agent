@@ -4,9 +4,13 @@ Speech-to-Text module using OpenAI Whisper.
 Converts audio files to text with support for multiple languages.
 """
 import os
+import warnings
 import whisper
 from pathlib import Path
 from typing import Optional
+
+# Suppress FP16 warning on CPU
+warnings.filterwarnings("ignore", message="FP16 is not supported on CPU; using FP32 instead")
 
 
 class SpeechToText:

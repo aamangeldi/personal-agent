@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from voice_agent import VoiceAgent
 from record_audio import AudioRecorder
+from play_audio import play_audio
 
 
 def create_sample_audio_if_needed():
@@ -105,12 +106,22 @@ def run_interactive_demo():
                 print(f"  {lang.capitalize()}: {path}")
 
         print("\n" + "="*70)
+        print("PLAYING AUDIO RESPONSES")
+        print("="*70)
+
+        # Play English response
+        print("\n🔊 Playing English response...")
+        play_audio(result['audio_files']['english'])
+
+        print("\n🔊 Playing Russian response...")
+        play_audio(result['audio_files']['russian'])
+
+        print("\n" + "="*70)
         print("DEMO COMPLETE!")
         print("="*70)
         print("\n💡 The audio responses have been saved:")
         print(f"  • English: {result['audio_files']['english']}")
         print(f"  • Russian: {result['audio_files']['russian']}")
-        print("\nYou can play them with any audio player!")
 
     except Exception as e:
         print(f"\n❌ Error during demo: {e}")
@@ -167,6 +178,17 @@ def run_demo():
             for lang, path in result['audio_files'].items():
                 print(f"  {lang.capitalize()}: {path}")
 
+            print("\n" + "="*70)
+            print("PLAYING AUDIO RESPONSES")
+            print("="*70)
+
+            # Play English response
+            print("\n🔊 Playing English response...")
+            play_audio(result['audio_files']['english'])
+
+            print("\n🔊 Playing Russian response...")
+            play_audio(result['audio_files']['russian'])
+
         print("\n" + "="*70)
         print("DEMO COMPLETE!")
         print("="*70)
@@ -216,6 +238,17 @@ def run_custom_demo(audio_file: str):
         print("\n🔊 Audio outputs:")
         for lang, path in result['audio_files'].items():
             print(f"  {lang}: {path}")
+
+        print("\n" + "="*70)
+        print("PLAYING AUDIO RESPONSES")
+        print("="*70)
+
+        # Play English response
+        print("\n🔊 Playing English response...")
+        play_audio(result['audio_files']['english'])
+
+        print("\n🔊 Playing Russian response...")
+        play_audio(result['audio_files']['russian'])
 
 
 def main():
