@@ -1,0 +1,16 @@
+# Core agent dependencies
+crewai
+anthropic
+
+# Speech-to-text
+openai-whisper
+# Audio processing for Whisper
+soundfile
+# Needed by Whisper for audio decoding
+ffmpeg-python
+
+# Text-to-speech
+openai>=1.0.0
+
+# Audio utilities
+pydub
