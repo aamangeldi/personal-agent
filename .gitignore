@@ -6,3 +6,19 @@ amir-agent-ec2.pem
 
 # NANDA Adapter code
 adapter/*
+
+# Voice agent outputs
+voice_output/
+demo_output/
+sample_audio/
+*.mp3
+*.wav
+*.m4a
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+.venv/
